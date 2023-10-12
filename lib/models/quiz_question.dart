@@ -4,7 +4,7 @@ class QuizQuestion{
 
   const QuizQuestion(this.text,this.answers);
 
-  List<String> getShuffledList(){
+  List<String> get shuffledList{
     final shuffledList = List.of(answers);
     shuffledList.shuffle();
     return shuffledList;

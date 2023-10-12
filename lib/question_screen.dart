@@ -15,7 +15,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
 
   int _currentQuestionIndex = 0;
 
-  answerQuestion(String answer){
+  _answerQuestion(String answer){
     widget.onSelectedAnswer(answer);
     setState(() {
       _currentQuestionIndex++;
@@ -44,10 +44,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
           const SizedBox(
             height: 30,
           ),
-          ...currentQuestion.getShuffledList().map(
+          ...currentQuestion.shuffledList.map(
             (answer) => AnswerButton(
               answerText: answer,
-              onTap: () => answerQuestion(answer),
+              onTap: () => _answerQuestion(answer),
             ),
           ),
         ],
